@@ -275,11 +275,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [129, 981; 479, 1212]
+      Location      [129, 981; 479, 1220]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADEA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGMA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABjAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAAAV4AAADIAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAAAV4AAADQAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -348,7 +348,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Amplitude"
-        Value         "100*[1;1]"
+        Value         "700*[1;1]"
         Show          off
       }
       Parameter {
@@ -668,7 +668,7 @@ Plecs {
       Frame         [-15, -10; 15, 10]
       Parameter {
         Variable      "Value"
-        Value         "350"
+        Value         "700"
         Show          off
       }
       Parameter {
@@ -1410,40 +1410,6 @@ Plecs {
             }
           }
           Component {
-            Type          Gain
-            Name          "Gain"
-            Show          off
-            Position      [75, 65]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "K"
-              Value         "1/2"
-              Show          off
-            }
-            Parameter {
-              Variable      "Multiplication"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "OutputDataType"
-              Value         "11"
-              Show          off
-            }
-            Parameter {
-              Variable      "DataTypeOverflowMode"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "GainDataType"
-              Value         "11"
-              Show          off
-            }
-          }
-          Component {
             Type          LogicalOperator
             Name          "Logical\nOperator1"
             Show          off
@@ -1831,6 +1797,40 @@ Plecs {
               Show          off
             }
           }
+          Component {
+            Type          Gain
+            Name          "Gain"
+            Show          off
+            Position      [75, 65]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "K"
+              Value         "0.5"
+              Show          off
+            }
+            Parameter {
+              Variable      "Multiplication"
+              Value         "1"
+              Show          off
+            }
+            Parameter {
+              Variable      "OutputDataType"
+              Value         "11"
+              Show          off
+            }
+            Parameter {
+              Variable      "DataTypeOverflowMode"
+              Value         "1"
+              Show          off
+            }
+            Parameter {
+              Variable      "GainDataType"
+              Value         "11"
+              Show          off
+            }
+          }
           Connection {
             Type          Signal
             SrcComponent  "Relational\nOperator"
@@ -1842,7 +1842,6 @@ Plecs {
               DstTerminal   2
             }
             Branch {
-              Points        [470, 50; 525, 50]
               DstComponent  "S1"
               DstTerminal   1
             }
@@ -1872,25 +1871,9 @@ Plecs {
               DstTerminal   2
             }
             Branch {
-              Points        [470, 135; 525, 135]
               DstComponent  "S2"
               DstTerminal   1
             }
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "Vdc"
-            SrcTerminal   1
-            DstComponent  "Gain"
-            DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "Gain"
-            SrcTerminal   2
-            Points        [110, 65; 110, 50]
-            DstComponent  "Divide"
-            DstTerminal   3
           }
           Connection {
             Type          Signal
@@ -2003,6 +1986,21 @@ Plecs {
           }
           Connection {
             Type          Signal
+            SrcComponent  "Vdc"
+            SrcTerminal   1
+            DstComponent  "Gain"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "Gain"
+            SrcTerminal   2
+            Points        [110, 65; 110, 50]
+            DstComponent  "Divide"
+            DstTerminal   3
+          }
+          Connection {
+            Type          Signal
             SrcComponent  "vabc*"
             SrcTerminal   1
             DstComponent  "Divide"
@@ -2012,7 +2010,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "2"
+        Value         "1"
         Show          off
       }
     }
@@ -2024,11 +2022,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [1051, 731; 1401, 970]
+      Location      [1051, 731; 1401, 978]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADEA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGMA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABjAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAAAV4AAADQAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAAAV4AAADYAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
